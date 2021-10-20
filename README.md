@@ -9,5 +9,6 @@
 * Qt版本：Qt 5.9.0 MSVC2015 32bit
 * openOCD版本:0.11.0
 ## 编译
-使用QtCreator 打开 Programmer.pro,编译运行
+* 将openocd.rar解压
+* 使用QtCreator 打开 Programmer.pro,编译运行
 
