@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Programmer</class>
+ <widget class="QMainWindow" name="Programmer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>674</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DAPProgrammer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="handleWidth">
+        <number>8</number>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="title">
+            <string>DAPLink 下载选项</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="2" column="2" colspan="2">
+             <widget class="QComboBox" name="cbbFreq">
+              <item>
+               <property name="text">
+                <string>2MHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1MHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>500KHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>200KHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100KHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>50KHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20KHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10KHz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5KHz</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="Led" name="led">
+              <property name="colorable">
+               <bool>true</bool>
+              </property>
+              <property name="offColor" stdset="0">
+               <enum>Led::Red</enum>
+              </property>
+              <property name="size" stdset="0">
+               <size>
+                <width>45</width>
+                <height>20</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="QLabel" name="lblFWVersion">
+              <property name="text">
+               <string>--</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" colspan="2">
+             <widget class="QComboBox" name="cbbPort">
+              <item>
+               <property name="text">
+                <string>SWD</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>JTAG</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="4">
+             <widget class="QCheckBox" name="ckbRunAfterProg">
+              <property name="text">
+               <string>下载后运行</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0" colspan="4">
+             <widget class="QCheckBox" name="ckbFullChipErase">
+              <property name="text">
+               <string>自动擦除扇区</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="4">
+             <widget class="QCheckBox" name="ckbVerify">
+              <property name="text">
+               <string>下载后校验数据</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0" colspan="4">
+             <widget class="QCheckBox" name="ckbUnlock">
+              <property name="text">
+               <string>自动解除读保护</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="2" colspan="2">
+             <widget class="QPushButton" name="btnDeviceConnect">
+              <property name="toolTip">
+               <string>Enter</string>
+              </property>
+              <property name="text">
+               <string>Device Connect(&amp;Enter)</string>
+              </property>
+              <property name="shortcut">
+               <string>Return</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>调试器</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QToolButton" name="btnReflash">
+              <property name="text">
+               <string>刷新</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QComboBox" name="cbbSerialNumber"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>复位模式</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="3">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>调试器 FW Version</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>调试通信接口</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>时钟频率上限</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2" colspan="2">
+             <widget class="QComboBox" name="cbbResetMode">
+              <item>
+               <property name="text">
+                <string>SYSRESETREQ(Default)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>VECTRESET</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QGroupBox" name="groupBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="title">
+            <string>器件信息</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout" columnstretch="1,2">
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>3</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>2</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>9</number>
+            </property>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>CPU</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="2">
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Device</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="lblProductID">
+              <property name="text">
+               <string>--</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Product ID</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="lblDeviceFamily">
+              <property name="text">
+               <string>--</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="lblFlashSize">
+              <property name="text">
+               <string>--</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>Flash size</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="lblProcessor">
+              <property name="text">
+               <string>--</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>SWD DPIDR</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="lblIDCODE">
+              <property name="text">
+               <string>--</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="btnDownload">
+           <property name="toolTip">
+            <string>Ctrl+F8</string>
+           </property>
+           <property name="text">
+            <string>下载</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+F8</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QSpinBox" name="spbAddress">
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::NoButtons</enum>
+           </property>
+           <property name="prefix">
+            <string>0x</string>
+           </property>
+           <property name="maximum">
+            <number>999999999</number>
+           </property>
+           <property name="value">
+            <number>134217728</number>
+           </property>
+           <property name="displayIntegerBase">
+            <number>16</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLineEdit" name="txtFilePath">
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="6">
+          <widget class="QTabWidget" name="tabOption">
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <property name="tabsClosable">
+            <bool>true</bool>
+           </property>
+           <property name="movable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="flash">
+            <attribute name="title">
+             <string>Flash</string>
+            </attribute>
+           </widget>
+           <widget class="QWidget" name="optionbytes">
+            <attribute name="title">
+             <string>Option</string>
+            </attribute>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="horizontalSpacing">
+              <number>0</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>6</number>
+             </property>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="pushButton_2">
+               <property name="text">
+                <string>恢复设置</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="pushButton">
+               <property name="text">
+                <string>设定写保护</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="2">
+              <widget class="QGroupBox" name="groupBox_7">
+               <property name="title">
+                <string>写保护</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_8">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QTableWidget" name="tblWRP">
+                  <column>
+                   <property name="text">
+                    <string>名字</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>值</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>描述</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="btnOpen">
+           <property name="toolTip">
+            <string>F7</string>
+           </property>
+           <property name="text">
+            <string>打开(&amp;F&amp;7)</string>
+           </property>
+           <property name="shortcut">
+            <string>F7</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="btnNetDownload">
+           <property name="toolTip">
+            <string>F8</string>
+           </property>
+           <property name="text">
+            <string>连接&amp;&amp;下载(&amp;F&amp;8)</string>
+           </property>
+           <property name="shortcut">
+            <string>F8</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
+        <string>Log</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_5" columnstretch="10,0">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="btnUnlock">
+          <property name="text">
+           <string>unlock</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btnClearLog">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" rowspan="5">
+         <widget class="QPlainTextEdit" name="txtLog">
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="plainText">
+           <string>* 成功连接目标芯片之后如果无法下载程序,可以尝试适当的调低时钟频率上限.
+* 如果遇到软件闪退之后无法连接,可以关闭软件,然后打开任务管理器,关闭openocd.exe.然后重新打开软件.
+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="btnFullErase">
+          <property name="text">
+           <string>Full Erase</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="btnLock">
+          <property name="text">
+           <string> lock</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QProgressBar" name="pgb">
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="format">
+       <string>Download: %p%</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>674</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Led</class>
+   <extends>QRadioButton</extends>
+   <header>led.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cbbSerialNumber</tabstop>
+  <tabstop>btnReflash</tabstop>
+  <tabstop>cbbPort</tabstop>
+  <tabstop>cbbFreq</tabstop>
+  <tabstop>cbbResetMode</tabstop>
+  <tabstop>ckbRunAfterProg</tabstop>
+  <tabstop>ckbVerify</tabstop>
+  <tabstop>ckbFullChipErase</tabstop>
+  <tabstop>ckbUnlock</tabstop>
+  <tabstop>btnDeviceConnect</tabstop>
+  <tabstop>btnDownload</tabstop>
+  <tabstop>btnNetDownload</tabstop>
+  <tabstop>btnOpen</tabstop>
+  <tabstop>txtFilePath</tabstop>
+  <tabstop>spbAddress</tabstop>
+  <tabstop>tabOption</tabstop>
+  <tabstop>btnClearLog</tabstop>
+  <tabstop>btnFullErase</tabstop>
+  <tabstop>btnUnlock</tabstop>
+  <tabstop>btnLock</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>txtLog</tabstop>
+  <tabstop>tblWRP</tabstop>
+  <tabstop>led</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnClearLog</sender>
+   <signal>clicked()</signal>
+   <receiver>txtLog</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>661</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>529</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
